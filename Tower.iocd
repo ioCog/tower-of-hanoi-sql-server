@@ -1,0 +1,8 @@
+﻿////ioCog Data File
+////Tower of Hanoi
+////Rob Lewis
+////4 Aug 2017
+
+SQLLoad Peg;
+SQLLoad Disk;
+MAKE Goal (Stack [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], From 1, To 3);

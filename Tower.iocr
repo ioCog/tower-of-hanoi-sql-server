@@ -1,0 +1,33 @@
+﻿////ioCog Rules File
+////Tower of Hanoi
+////Rob Lewis
+////4 Aug 2017
+
+
+Rule Strategy(
+	Comment "Breaks Goals down into simpler goals for moving stack";
+	Goal (Stack {<stack> Length > 1}, From <from>, To <to>);
+	Peg (PegNumber {<temp> <> <from> <> <to>});
+-->
+	Set <disk> = Pop(<stack>);
+	Make Goal (Stack <stack>, From <temp>, To <to>);
+	Make Goal (Stack <disk>, From <from>, To <to>);
+	Make Goal (Stack <stack>, From <from>, To <temp>);
+	Write ($"Made goals to move stack {<stack>} from {<from>} to {<temp>}, disk {<disk>} from {<from>} to {<to>}, stack {<stack>} from {<temp>} to {<to>}");
+	Remove 1;
+);
+
+
+
+Rule MoveDisk(
+	Comment "Moves a topmost disk to top of pile on target peg";
+	Goal (Stack <disk>, From <from>, To <to>);
+	Disk (Size = <disk>, Peg = <from>);
+	! Disk (Peg = <from>, Size < <disk>);
+	! Disk (Peg = <to>, Size < <disk>);
+-->
+	Write ($"Moving disk {<disk>} from {<from>} to {<to>}");
+	Modify 2 (Peg <to> );
+	Remove 1;
+);
+

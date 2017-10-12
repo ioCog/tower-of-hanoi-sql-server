@@ -1,0 +1,13 @@
+﻿////ioCog Project File
+////Tower of Hanoi
+////Rob Lewis
+////4 Aug 2017
+
+Project "Tower of Hanoi";
+
+Verbosity 0;
+
+Load Tower.iocc;
+Load Tower.iocb;
+Load Tower.iocr;
+Load Tower.iocd;

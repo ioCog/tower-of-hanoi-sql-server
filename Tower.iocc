@@ -1,0 +1,24 @@
+﻿////ioCog Class File
+////Tower of Hanoi
+////Rob Lewis
+////4 Aug 2017
+
+
+Class Disk(
+	Comment "Represents a Disk of a given Size that is on a Peg",
+	Size,
+	Peg
+);
+
+Class Goal(
+	Comment "Represents the goal of moving a stack of disks or a single disk from one peg to another",
+	Stack,
+	From,
+	To
+);
+
+Class Peg(
+	Comment "Represents a peg",
+	PegNumber
+);
+

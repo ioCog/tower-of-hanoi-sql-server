@@ -1,0 +1,19 @@
+﻿////ioCog Bindings File
+////Tower of Hanoi
+////Rob Lewis
+////4 Aug 2017
+
+
+SQLConnection TowerDB (SQLSERVER, "data source=server;initial catalog=Hanoidb;uid=ioCog;pwd=p@55w0rd;");
+
+SQLBind Disk (TowerDB, Disk,
+	Mapping (Size Size, Peg Peg)
+);
+
+SQLBind Peg (TowerDB, Peg,
+	Mapping (PegNumber Peg)
+);
+
+SQLBind Goal (TowerDB, GoalOut,
+	Mapping (Stack Stack, From FromPeg, To ToPeg)
+);
